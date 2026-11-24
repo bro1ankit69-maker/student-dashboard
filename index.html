@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f3f8;
+    padding: 30px;
+}
+
+header {
+    background: #172554;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.student-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #ddd;
+    margin-bottom: 25px;
+}
+
+.student-card h2 {
+    color: #172554;
+    margin-bottom: 15px;
+}
+
+.student-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.student-details p {
+    font-size: 16px;
+    line-height: 2;
+}
+
+.timetable {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #ddd;
+    overflow-x: auto;
+}
+
+.timetable h2 {
+    color: #172554;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background: #1e40af;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f1f5f9;
+}
+
+.today {
+    background: #dbeafe !important;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #64748b;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h1>Student Dashboard</h1>
+    <p>Student Information & Weekly Timetable</p>
+</header>
+
+<section class="student-card">
+    <h2>Student Information</h2>
+
+    <div class="student-details">
+        <p><strong>Student ID:</strong> 240001</p>
+        <p><strong>Name:</strong> Ankit Kumar</p>
+        <p><strong>Department:</strong> Mechanical Engineering</p>
+        <p><strong>Year:</strong> Second Year</p>
+    </div>
+</section>
+
+<section class="timetable">
+    <h2>Weekly Class Timetable</h2>
+
+    <table>
+        <tr>
+            <th>Day</th>
+            <th>9:00 - 10:00</th>
+            <th>10:00 - 11:00</th>
+            <th>11:00 - 12:00</th>
+            <th>12:00 - 1:00</th>
+        </tr>
+
+        <tr>
+            <td>Monday</td>
+            <td>Mathematics</td>
+            <td>Thermodynamics</td>
+            <td>Material Science</td>
+            <td>Workshop</td>
+        </tr>
+
+        <tr>
+            <td>Tuesday</td>
+            <td>Mechanics</td>
+            <td>Mathematics</td>
+            <td>Thermodynamics</td>
+            <td>Lab</td>
+        </tr>
+
+        <tr>
+            <td>Wednesday</td>
+            <td>Material Science</td>
+            <td>Mechanics</td>
+            <td>Workshop</td>
+            <td>Mathematics</td>
+        </tr>
+
+        <tr>
+            <td>Thursday</td>
+            <td>Thermodynamics</td>
+            <td>Material Science</td>
+            <td>Mathematics</td>
+            <td>Lab</td>
+        </tr>
+
+        <tr>
+            <td>Friday</td>
+            <td>Mechanics</td>
+            <td>Thermodynamics</td>
+            <td>Workshop</td>
+            <td>Library</td>
+        </tr>
+
+    </table>
+</section>
+
+<footer>
+    <p>© 2026 Student Dashboard | All Rights Reserved</p>
+</footer>
+
+</div>
+
+<script>
+const today = new Date().getDay();
+
+const days = [1, 2, 3, 4, 5];
+
+const rows = document.querySelectorAll("table tr");
+
+days.forEach((day, index) => {
+    if (today === day) {
+        rows[index + 1].classList.add("today");
+    }
+});
+</script>
+
+</body>
+</html>
